@@ -1,4 +1,4 @@
-
+import { Routes, Route,Link  } from "react-router"
 import './App.css';
 
 const Contact = ()=>{
@@ -31,9 +31,24 @@ const App = ()=>{
   return (
     <div className="App">
       <h1>React Router Dom</h1>
-      <Home/> 
-      <Tasks/>
-      <Contact/>
+      <nav>
+        <ul>
+          <li><Link to="/">Home</Link>
+          </li>
+          <li><Link to="/Tasks">Tasks</Link>
+          </li>
+          <li><Link to="/Contact">Contact</Link>
+          </li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/Tasks" element={<Tasks/>} />
+        <Route path="/Contact" element={<Contact/>} />
+      </Routes>
+      
+      
+      
     </div>
   );
 }
